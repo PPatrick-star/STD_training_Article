@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.board.mapper.BoardMapper">
+
+   <insert id="insertOne" useGeneratedKeys="true" keyProperty="boardPk" keyColumn="pk_bulletin_board">
+        INSERT INTO TB_BULLETIN_BOARD( fd_bulletin_title
+                                     , fd_bulletin_contents
+                                     , fd_bulletin_writer
+                                     , fd_bpost_date19 )
+        VALUES (#{boardTitle}, #{boardContent}, #{boardWriter}, #{postDate})
+   </insert>
+
+</mapper>
