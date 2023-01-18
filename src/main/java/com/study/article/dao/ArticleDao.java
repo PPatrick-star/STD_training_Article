@@ -31,4 +31,13 @@ public class ArticleDao {
 
         return mapper.getArticleList();
     }
+
+    public String updateArticle(Long articlePk, String title, String content, String writer) {
+        int updateRow = mapper.updateArticle(articlePk, title, content, writer);
+        if (updateRow == 0) {
+            return "FAIL";
+        } else {
+            return "SUCCESS";
+        }
+    }
 }

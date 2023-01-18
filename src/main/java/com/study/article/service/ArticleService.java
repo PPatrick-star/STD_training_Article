@@ -63,4 +63,9 @@ public class ArticleService {
         return resultList;
     }
 
+    public String updateArticle(Long articlePk, String title, String content, String writer) {
+
+        return articleDao.updateArticle(articlePk, title, content, writer);
+    }
+
 }

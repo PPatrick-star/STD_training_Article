@@ -35,5 +35,11 @@ public class ArticleController {
         return articleService.getArticleList();
     }
 
+    @PostMapping(value = "/article/update")
+    public String updateArticle(Long articlePk, String title, String content, String writer) {
+
+        return articleService.updateArticle(articlePk, title, content, writer);
+    }
+
 
 }
