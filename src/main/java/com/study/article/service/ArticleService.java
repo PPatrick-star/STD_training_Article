@@ -8,6 +8,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -38,6 +41,26 @@ public class ArticleService {
 
 
         return result;
+    }
+
+    public List<ArticleDto> getArticleList() {
+
+        List<ArticleVo> voList = articleDao.getArticleList();
+
+        List<ArticleDto> resultList = new ArrayList<>();
+
+        for (ArticleVo vo : voList) {
+            ArticleDto dto = new ArticleDto();
+            dto.setArticlePk(vo.getArticlePk());
+            dto.setArticleTitle(vo.getArticleTitle());
+            dto.setArticleContents(vo.getArticleContents());
+            dto.setArticleWriter(vo.getArticleWriter());
+            dto.setPostDate(vo.getPostDate());
+
+            resultList.add(dto);
+        }
+
+        return resultList;
     }
 
 }
