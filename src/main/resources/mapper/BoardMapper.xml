@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.study.board.mapper.BoardMapper">
+<mapper namespace="com.study.article.mapper.ArticleMapper">
 
-	<resultMap id="oneArticle" type="com.study.board.vo.BoardVo">
-		<result column="pk_article"		property="boardPk"		javaType="Long"/>
-		<result column="article_title"		property="boardTitle"	javaType="String"/>
-		<result column="article_contents"	property="boardContent"	javaType="String"/>
-		<result column="article_writer"		property="boardWriter"	javaType="String"/>
+	<resultMap id="oneArticle" type="com.study.article.vo.ArticleVo">
+		<result column="pk_article"		property="articlePk"		javaType="Long"/>
+		<result column="article_title"		property="articleTitle"	javaType="String"/>
+		<result column="article_contents"	property="articleContents"	javaType="String"/>
+		<result column="article_writer"		property="articleWriter"	javaType="String"/>
 		<result column="apost_date"		property="postDate"		javaType="String"/>
 	</resultMap>
 
-   <insert id="insertOne" useGeneratedKeys="true" keyProperty="boardPk" keyColumn="pk_article">
+   <insert id="insertOne" useGeneratedKeys="true" keyProperty="articlePk" keyColumn="pk_article">
         INSERT INTO tb_article( article_title
                                      , article_contents
                                      , article_writer
                                      , apost_date )
-        VALUES (#{boardTitle}, #{boardContent}, #{boardWriter}, #{postDate})
+        VALUES (#{articleTitle}, #{articleContents}, #{articleWriter}, #{postDate})
    </insert>
 
-   <select id="getReadBoard" resultMap="oneArticle">
+   <select id="getReadArticle" resultMap="oneArticle">
         SELECT * FROM tb_article
-        WHERE pk_article = #{boardPk}
+        WHERE pk_article = #{articlePk}
    </select>
 
 </mapper>
