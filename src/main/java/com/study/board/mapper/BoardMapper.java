@@ -7,4 +7,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface BoardMapper {
 
     int insertOne(BoardVo boardVo);
+
+    BoardVo getReadBoard(Long boardPk);
 }

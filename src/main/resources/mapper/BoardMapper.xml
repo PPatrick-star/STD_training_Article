@@ -2,12 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.study.board.mapper.BoardMapper">
 
-   <insert id="insertOne" useGeneratedKeys="true" keyProperty="boardPk" keyColumn="pk_bulletin_board">
-        INSERT INTO TB_BULLETIN_BOARD( fd_bulletin_title
-                                     , fd_bulletin_contents
-                                     , fd_bulletin_writer
-                                     , fd_bpost_date19 )
+	<resultMap id="oneArticle" type="com.study.board.vo.BoardVo">
+		<result column="pk_article"		property="boardPk"		javaType="Long"/>
+		<result column="article_title"		property="boardTitle"	javaType="String"/>
+		<result column="article_contents"	property="boardContent"	javaType="String"/>
+		<result column="article_writer"		property="boardWriter"	javaType="String"/>
+		<result column="apost_date"		property="postDate"		javaType="String"/>
+	</resultMap>
+
+   <insert id="insertOne" useGeneratedKeys="true" keyProperty="boardPk" keyColumn="pk_article">
+        INSERT INTO tb_article( article_title
+                                     , article_contents
+                                     , article_writer
+                                     , apost_date )
         VALUES (#{boardTitle}, #{boardContent}, #{boardWriter}, #{postDate})
    </insert>
+
+   <select id="getReadBoard" resultMap="oneArticle">
+        SELECT * FROM tb_article
+        WHERE pk_article = #{boardPk}
+   </select>
 
 </mapper>
