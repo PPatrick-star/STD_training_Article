@@ -19,4 +19,9 @@ public class BoardDao {
             return "SUCCESS";
         }
     }
+
+    public BoardVo getReadBoard(Long boardPk) {
+
+        return mapper.getReadBoard(boardPk);
+    }
 }
