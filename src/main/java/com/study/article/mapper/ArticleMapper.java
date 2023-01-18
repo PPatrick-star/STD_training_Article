@@ -13,4 +13,6 @@ public interface ArticleMapper {
     ArticleVo getReadArticle(Long boardPk);
 
     List<ArticleVo> getArticleList();
+
+    int updateArticle(Long articlePk, String title, String content, String writer);
 }

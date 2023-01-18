@@ -12,20 +12,30 @@
 
    <insert id="insertOne" useGeneratedKeys="true" keyProperty="articlePk" keyColumn="pk_article">
         INSERT INTO tb_article( article_title
-                                     , article_contents
-                                     , article_writer
-                                     , apost_date )
+                              , article_contents
+                              , article_writer
+                              , apost_date )
         VALUES (#{articleTitle}, #{articleContents}, #{articleWriter}, #{postDate})
    </insert>
 
    <select id="getReadArticle" resultMap="oneArticle">
-        SELECT * FROM tb_article
-        WHERE pk_article = #{articlePk}
+        SELECT  *
+        FROM    tb_article
+        WHERE   pk_article = #{articlePk}
    </select>
 
    <select id="getArticleList" resultMap="oneArticle">
-        SELECT * FROM tb_article
+        SELECT   *
+        FROM     tb_article
         ORDER BY pk_article
    </select>
+
+    <update id="updateArticle">
+        UPDATE tb_article
+        SET article_title = #{title}
+            , article_contents = #{content}
+            , article_writer = #{writer}
+        WHERE pk_article = #{articlePk}
+    </update>
 
 </mapper>
