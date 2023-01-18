@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 public class ArticleController {
@@ -25,6 +27,12 @@ public class ArticleController {
     public ArticleDto getArticle(Long articlePk) {
 
         return articleService.getArticle(articlePk);
+    }
+
+    @GetMapping(value = "/article/list")
+    public List<ArticleDto> getArticleList() {
+
+        return articleService.getArticleList();
     }
 
 

@@ -23,4 +23,9 @@
         WHERE pk_article = #{articlePk}
    </select>
 
+   <select id="getArticleList" resultMap="oneArticle">
+        SELECT * FROM tb_article
+        ORDER BY pk_article
+   </select>
+
 </mapper>

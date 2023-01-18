@@ -5,6 +5,8 @@ import com.study.article.vo.ArticleVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 @RequiredArgsConstructor
 public class ArticleDao {
@@ -23,5 +25,10 @@ public class ArticleDao {
     public ArticleVo getReadArticle(Long articlePk) {
 
         return mapper.getReadArticle(articlePk);
+    }
+
+    public List<ArticleVo> getArticleList() {
+
+        return mapper.getArticleList();
     }
 }
