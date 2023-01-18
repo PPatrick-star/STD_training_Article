@@ -3,6 +3,7 @@ package com.study.article.controller;
 import com.study.article.dto.ArticleDto;
 import com.study.article.service.ArticleService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,5 +42,10 @@ public class ArticleController {
         return articleService.updateArticle(articlePk, title, content, writer);
     }
 
+    @DeleteMapping(value = "/article/delete")
+    public String deleteArticle(Long articlePk) {
+
+        return articleService.deleteArticle(articlePk);
+    }
 
 }
