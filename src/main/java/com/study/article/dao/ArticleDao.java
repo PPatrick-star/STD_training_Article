@@ -40,4 +40,13 @@ public class ArticleDao {
             return "SUCCESS";
         }
     }
+
+    public String deleteArticle(Long articlePk) {
+        int deleteRow = mapper.deleteArticle(articlePk);
+        if (deleteRow == 0) {
+            return "FAIL";
+        } else {
+            return "SUCCESS";
+        }
+    }
 }

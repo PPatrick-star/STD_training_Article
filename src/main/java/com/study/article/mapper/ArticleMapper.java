@@ -15,4 +15,6 @@ public interface ArticleMapper {
     List<ArticleVo> getArticleList();
 
     int updateArticle(Long articlePk, String title, String content, String writer);
+
+    int deleteArticle(Long articlePk);
 }

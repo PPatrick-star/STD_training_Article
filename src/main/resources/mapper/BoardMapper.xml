@@ -38,4 +38,10 @@
         WHERE pk_article = #{articlePk}
     </update>
 
+    <delete id="deleteArticle">
+        DELETE
+        FROM tb_article
+        WHERE pk_article = #{articlePk}
+    </delete>
+
 </mapper>

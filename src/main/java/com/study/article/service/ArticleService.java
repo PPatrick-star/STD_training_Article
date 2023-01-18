@@ -68,4 +68,8 @@ public class ArticleService {
         return articleDao.updateArticle(articlePk, title, content, writer);
     }
 
+    public String deleteArticle(Long articlePk) {
+
+        return articleDao.deleteArticle(articlePk);
+    }
 }
