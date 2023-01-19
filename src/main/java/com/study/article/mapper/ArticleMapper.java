@@ -19,4 +19,6 @@ public interface ArticleMapper {
     int updateArticle(Long articlePk, String title, String content, String writer);
 
     int deleteArticle(Long articlePk);
+
+    int updateAttachmentYn(Long articlePk, String updateValue);
 }

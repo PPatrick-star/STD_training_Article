@@ -44,4 +44,9 @@ public class ArticleController implements OmniArticleAPI {
         return articleService.deleteArticle(articlePk);
     }
 
+    public String updateAttachmentYn(Long articlePk, String updateValue) {
+
+        return articleService.updateAttachmentYn(articlePk, updateValue);
+    }
+
 }

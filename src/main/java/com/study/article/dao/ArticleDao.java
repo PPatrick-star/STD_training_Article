@@ -54,4 +54,13 @@ public class ArticleDao {
             return "SUCCESS";
         }
     }
+
+    public String updateAttachmentYn(Long articlePk, String updateValue) {
+        int updateRow = mapper.updateAttachmentYn(articlePk, updateValue);
+        if (updateRow == 0) {
+            return "FAIL";
+        } else {
+            return "SUCCESS";
+        }
+    }
 }
