@@ -14,6 +14,9 @@ public interface OmniArticleAPI {
     @GetMapping(value = "/article/read")
     ArticleDto getArticle(Long articlePk);
 
+    @GetMapping(value = "/article/list/count")
+    int countArticleList();
+
     @GetMapping(value = "/article/list")
     List<ArticleDto> getArticleList();
 
@@ -21,5 +24,5 @@ public interface OmniArticleAPI {
     String updateArticle(Long articlePk, String title, String content, String writer);
 
     @DeleteMapping(value = "/article/delete")
-    public String deleteArticle(Long articlePk);
+    String deleteArticle(Long articlePk);
 }

@@ -43,6 +43,11 @@ public class ArticleService {
         return result;
     }
 
+    public int countArticleList() {
+
+        return articleDao.countArticleList();
+    }
+
     public List<ArticleDto> getArticleList() {
 
         List<ArticleVo> voList = articleDao.getArticleList();
