@@ -14,7 +14,7 @@ public class ArticleController implements OmniArticleAPI {
 
     private final ArticleService articleService;
 
-    public String createArticle(String title, String content, String writer, String postDate) {
+    public boolean createArticle(String title, String content, String writer, String postDate) {
 
         return articleService.createArticle(title, content, writer, postDate);
     }
@@ -34,17 +34,17 @@ public class ArticleController implements OmniArticleAPI {
         return articleService.getArticleList();
     }
 
-    public String updateArticle(Long articlePk, String title, String content, String writer) {
+    public boolean updateArticle(Long articlePk, String title, String content, String writer) {
 
         return articleService.updateArticle(articlePk, title, content, writer);
     }
 
-    public String deleteArticle(Long articlePk) {
+    public boolean deleteArticle(Long articlePk) {
 
         return articleService.deleteArticle(articlePk);
     }
 
-    public String updateAttachmentYn(Long articlePk, String updateValue) {
+    public boolean updateAttachmentYn(Long articlePk, String updateValue) {
 
         return articleService.updateAttachmentYn(articlePk, updateValue);
     }

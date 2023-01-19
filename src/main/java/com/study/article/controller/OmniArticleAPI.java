@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface OmniArticleAPI {
     @PostMapping(value = "/article/create")
-    String createArticle(String title, String content, String writer, String postDate);
+    boolean createArticle(String title, String content, String writer, String postDate);
 
     @GetMapping(value = "/article/read")
     ArticleDto getArticle(Long articlePk);
@@ -21,11 +21,11 @@ public interface OmniArticleAPI {
     List<ArticleDto> getArticleList();
 
     @PostMapping(value = "/article/update")
-    String updateArticle(Long articlePk, String title, String content, String writer);
+    boolean updateArticle(Long articlePk, String title, String content, String writer);
 
     @DeleteMapping(value = "/article/delete")
-    String deleteArticle(Long articlePk);
+    boolean deleteArticle(Long articlePk);
 
     @PostMapping(value = "/article/attachment/update")
-    String updateAttachmentYn(Long articlePk, String updateValue);
+    boolean updateAttachmentYn(Long articlePk, String updateValue);
 }
