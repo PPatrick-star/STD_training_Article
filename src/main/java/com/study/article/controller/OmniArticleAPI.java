@@ -25,4 +25,7 @@ public interface OmniArticleAPI {
 
     @DeleteMapping(value = "/article/delete")
     String deleteArticle(Long articlePk);
+
+    @PostMapping(value = "/article/attachment/update")
+    String updateAttachmentYn(Long articlePk, String updateValue);
 }

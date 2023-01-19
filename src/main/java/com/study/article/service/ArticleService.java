@@ -77,4 +77,9 @@ public class ArticleService {
 
         return articleDao.deleteArticle(articlePk);
     }
+
+    public String updateAttachmentYn(Long articlePk, String updateValue) {
+
+        return articleDao.updateAttachmentYn(articlePk, updateValue);
+    }
 }
