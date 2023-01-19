@@ -24,6 +24,11 @@
         WHERE   pk_article = #{articlePk}
    </select>
 
+   <select id="countArticleList" resultType="integer">
+        SELECT count(1)
+        FROM tb_article
+   </select>
+
    <select id="getArticleList" resultMap="oneArticle">
         SELECT   *
         FROM     tb_article

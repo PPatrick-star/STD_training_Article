@@ -12,8 +12,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ArticleController implements OmniArticleAPI {
 
-    private static final String PRODUCES_JSON = "application/json; charset=UTF-8";
-
     private final ArticleService articleService;
 
     public String createArticle(String title, String content, String writer, String postDate) {
@@ -24,6 +22,11 @@ public class ArticleController implements OmniArticleAPI {
     public ArticleDto getArticle(Long articlePk) {
 
         return articleService.getArticle(articlePk);
+    }
+
+    public int countArticleList() {
+
+        return articleService.countArticleList();
     }
 
     public List<ArticleDto> getArticleList() {
