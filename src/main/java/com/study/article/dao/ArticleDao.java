@@ -13,13 +13,9 @@ public class ArticleDao {
 
     private final ArticleMapper mapper;
 
-    public String insertOne(ArticleVo articleVo) {
+    public boolean insertOne(ArticleVo articleVo) {
         int insertRows = mapper.insertOne(articleVo);
-        if (insertRows == 0) {
-            return "FAIL";
-        } else {
-            return "SUCCESS";
-        }
+        return insertRows > 0;
     }
 
     public ArticleVo getReadArticle(Long articlePk) {
@@ -37,30 +33,18 @@ public class ArticleDao {
         return mapper.countArticleList();
     }
 
-    public String updateArticle(Long articlePk, String title, String content, String writer) {
+    public boolean updateArticle(Long articlePk, String title, String content, String writer) {
         int updateRow = mapper.updateArticle(articlePk, title, content, writer);
-        if (updateRow == 0) {
-            return "FAIL";
-        } else {
-            return "SUCCESS";
-        }
+        return updateRow > 0;
     }
 
-    public String deleteArticle(Long articlePk) {
+    public boolean deleteArticle(Long articlePk) {
         int deleteRow = mapper.deleteArticle(articlePk);
-        if (deleteRow == 0) {
-            return "FAIL";
-        } else {
-            return "SUCCESS";
-        }
+        return deleteRow > 0;
     }
 
-    public String updateAttachmentYn(Long articlePk, String updateValue) {
+    public boolean updateAttachmentYn(Long articlePk, String updateValue) {
         int updateRow = mapper.updateAttachmentYn(articlePk, updateValue);
-        if (updateRow == 0) {
-            return "FAIL";
-        } else {
-            return "SUCCESS";
-        }
+        return updateRow > 0;
     }
 }

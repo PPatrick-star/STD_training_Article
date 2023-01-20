@@ -18,7 +18,7 @@ public class ArticleService {
 
     private final ArticleDao articleDao;
 
-    public String createArticle(String title, String content, String writer, String postDate) {
+    public boolean createArticle(String title, String content, String writer, String postDate) {
 
         return articleDao.insertOne(ArticleVo.builder()
                 .articleTitle(title)
@@ -68,17 +68,17 @@ public class ArticleService {
         return resultList;
     }
 
-    public String updateArticle(Long articlePk, String title, String content, String writer) {
+    public boolean updateArticle(Long articlePk, String title, String content, String writer) {
 
         return articleDao.updateArticle(articlePk, title, content, writer);
     }
 
-    public String deleteArticle(Long articlePk) {
+    public boolean deleteArticle(Long articlePk) {
 
         return articleDao.deleteArticle(articlePk);
     }
 
-    public String updateAttachmentYn(Long articlePk, String updateValue) {
+    public boolean updateAttachmentYn(Long articlePk, String updateValue) {
 
         return articleDao.updateAttachmentYn(articlePk, updateValue);
     }
