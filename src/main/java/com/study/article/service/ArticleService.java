@@ -32,15 +32,22 @@ public class ArticleService {
 
         ArticleVo vo = articleDao.getReadArticle(articleVo);
 
-        ArticleDto result = new ArticleDto();
-        result.setArticlePk(vo.getArticlePk());
-        result.setArticleTitle(vo.getArticleTitle());
-        result.setArticleContents(vo.getArticleContents());
-        result.setArticleWriter(vo.getArticleWriter());
-        result.setPostDate(vo.getPostDate());
+        if (vo != null) {
+
+            ArticleDto result = new ArticleDto();
+            result.setArticlePk(vo.getArticlePk());
+            result.setArticleTitle(vo.getArticleTitle());
+            result.setArticleContents(vo.getArticleContents());
+            result.setArticleWriter(vo.getArticleWriter());
+            result.setPostDate(vo.getPostDate());
 
 
-        return result;
+            return result;
+        } else {
+
+            return null;
+        }
+
     }
 
     public int countArticleList() {
