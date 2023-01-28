@@ -24,7 +24,7 @@ public class ArticleService {
                 .articleTitle(title)
                 .articleContents(content)
                 .articleWriter(writer)
-                .postDate(postDate)
+                .apostDate(postDate)
                 .build());
     }
 
@@ -39,7 +39,7 @@ public class ArticleService {
             result.setArticleTitle(vo.getArticleTitle());
             result.setArticleContents(vo.getArticleContents());
             result.setArticleWriter(vo.getArticleWriter());
-            result.setPostDate(vo.getPostDate());
+            result.setApostDate(vo.getApostDate());
 
 
             return result;
@@ -67,7 +67,7 @@ public class ArticleService {
             dto.setArticleTitle(vo.getArticleTitle());
             dto.setArticleContents(vo.getArticleContents());
             dto.setArticleWriter(vo.getArticleWriter());
-            dto.setPostDate(vo.getPostDate());
+            dto.setApostDate(vo.getApostDate());
 
             resultList.add(dto);
         }
