@@ -11,6 +11,6 @@ public class ArticleDto {
     private String articleTitle;
     private String articleContents;
     private String articleWriter;
-    private String postDate;
+    private String apostDate;
 
 }

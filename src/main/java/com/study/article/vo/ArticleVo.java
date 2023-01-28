@@ -14,15 +14,15 @@ public class ArticleVo {
     private String articleTitle;
     private String articleContents;
     private String articleWriter;
-    private String postDate;
+    private String apostDate;
 
     @Builder
-    ArticleVo(Long articlePk, String articleTitle, String articleContents, String articleWriter, String postDate) {
+    ArticleVo(Long articlePk, String articleTitle, String articleContents, String articleWriter, String apostDate) {
         this.articlePk = articlePk;
         this.articleTitle = articleTitle;
         this.articleContents = articleContents;
         this.articleWriter = articleWriter;
-        this.postDate = postDate;
+        this.apostDate = apostDate;
     }
 
 }
