@@ -13,4 +13,9 @@ public class ArticleDao {
 
         return mapper.getArticleList();
     }
+
+    public String getOneArticle() {
+
+        return mapper.getReadArticle();
+    }
 }
