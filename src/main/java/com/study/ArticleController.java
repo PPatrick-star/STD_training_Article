@@ -14,4 +14,9 @@ public class ArticleController {
     public String getArticleList() {
         return articleService.getArticleList();
     }
+
+    @PostMapping(value = "/board/article/one")
+    public String getOneArticle() {
+        return articleService.getOneArticle();
+    }
 }
