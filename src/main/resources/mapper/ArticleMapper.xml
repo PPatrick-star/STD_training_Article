@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.study.mapper.ArticleMapper">
 
-	<resultMap id="oneArticle" type="com.study.vo.ArticleVo">
+	<resultMap id="oneArticle" type="com.study.ArticleVo">
 		<result column="article_pk"		property="articlePk"		javaType="Long"/>
 		<result column="article_title"		property="articleTitle"	javaType="String"/>
 		<result column="article_contents"	property="articleContents"	javaType="String"/>
